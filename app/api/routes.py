@@ -3,6 +3,8 @@ from app.services.document_service import process_uploaded_document
 from app.services.question_service import process_question
 from app.schemas.question_schema import QuestionRequest
 from app.core.chunk_store import chunk_store
+from app.core.config import APP_NAME, APP_VERSION
+from app.core.document_store import document_store
 
 router = APIRouter()
 
@@ -11,7 +13,11 @@ router = APIRouter()
 def health_check():
     return {
         "status": "success",
-        "message": "API is running successfully"
+        "message": "API is running successfully",
+        "app_name": APP_NAME,
+        "version": APP_VERSION,
+        "document_loaded": document_store["content"] is not None,
+        "current_document": document_store["filename"]
     }
 
 
