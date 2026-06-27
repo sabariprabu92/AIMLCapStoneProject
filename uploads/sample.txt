@@ -1,0 +1,9 @@
+Welcome to the AI ML Capstone Project.
+
+This project demonstrates Retrieval Augmented Generation (RAG).
+
+The system supports multiple document formats.
+
+Enterprise documents can be uploaded and queried using Large Language Models.
+
+FastAPI is used for building REST APIs.
